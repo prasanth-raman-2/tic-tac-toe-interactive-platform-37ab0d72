@@ -18,6 +18,15 @@ class TicTacToeGame:
 
     @staticmethod
     def check_winner(board: List[List[Optional[str]]]) -> Optional[str]:
+        """
+        Check if there is a winner on the board by examining all possible winning combinations.
+        Returns 'X' or 'O' if there's a winner, or None if there's no winner yet.
+        
+        Checks for:
+        - Complete rows (horizontal)
+        - Complete columns (vertical) 
+        - Both diagonals
+        """
         # Check rows
         for row in board:
             if row[0] == row[1] == row[2] and row[0] is not None:
